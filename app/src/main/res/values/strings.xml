@@ -1,0 +1,4 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">TrialQualityStandalone</string>
+    <string name="xposed_description">照 BiliRoamingX 原理独立出来的无限试看\n并非原始实现, 做得并不好\nTelegram @Aniruf_x</string>
+</resources>
