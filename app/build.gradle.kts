@@ -28,13 +28,13 @@ apktransform {
 
 android {
     namespace = "io.github.tqsa"
-    compileSdkPreview = "Baklava"
+    compileSdk = 35
     buildToolsVersion = "36.0.0-rc4"
 
     defaultConfig {
         applicationId = "io.github.tqsa"
         minSdk = 24
-        targetSdkPreview = "Baklava"
+        targetSdk = 35
         versionCode = appVerCode
         versionName = appVerName
     }
