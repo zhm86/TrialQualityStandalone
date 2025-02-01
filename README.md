@@ -11,7 +11,7 @@
 >[!Warning]
 > 禁止B站站内及国内公众平台传播和宣传<br/>
 > 
-> 通过 lspatch 使用模块的方试不受支持<br/>
+> 通过 lspatch 使用模块的方式不受支持<br/>
 
 TrialQualityStandalone 是一个依照 BiliRoamingX 无限试用会员画质功能的原理，但通过非原始实现制作的 Xposed 模块。<br/>
 
