@@ -41,7 +41,7 @@ jobs:
       - name: Retrieve version
         run: |
           commit_count=`git rev-list HEAD --count`
-          sed -i 's/^.*commit.*$/commit=$commit_count/' gradle.properties
+          echo 'commit=$commit_count' >> gradle.properties
           version=`awk -F "=" '$1 == "appVerName" {print $2}' gradle.properties`
           echo "VERSION=$version" >> $GITHUB_ENV
 
