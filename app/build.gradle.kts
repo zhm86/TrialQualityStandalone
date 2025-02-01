@@ -67,5 +67,5 @@ configurations.all {
 }
 
 dependencies {
-    compileOnly(files("lib/XposedBridgeApi-89.jar"))
+    implementation(files("lib/XposedBridgeApi-89.jar"))
 }
