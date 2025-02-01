@@ -47,6 +47,20 @@ class Hook : IXposedHookLoadPackage {
         }
     }
 
+    fun hookVipFree(className: String, classLoader: ClassLoader) {
+        XposedHelpers.findAndHookMethod(
+            className,
+            classLoader,
+            "getVipFree",
+            object : XC_MethodHook() {
+                override fun afterHookedMethod(param: MethodHookParam) {
+                    val needVip = XposedHelpers.getBooleanField(param.thisObject, "needVip_")
+                    param.result = needVip
+                }
+            }
+        )
+    }
+
     override fun handleLoadPackage(loadPackageParam: XC_LoadPackage.LoadPackageParam) {
         if (loadPackageParam.packageName in targetPackage) {
             XposedBridge.hookAllMethods(
@@ -58,8 +72,8 @@ class Hook : IXposedHookLoadPackage {
                         hookSetTrue("com.bapis.bilibili.playershared.VideoVod", loadPackageParam.classLoader)
                         hookMethod("com.bapis.bilibili.pgc.gateway.player.v2.SceneControl", "getIsNeedTrial", true , loadPackageParam.classLoader)
                         hookMethod("com.bapis.bilibili.playershared.VideoVod", "getIsNeedTrial", true , loadPackageParam.classLoader)
-                        hookMethod("com.bapis.bilibili.app.playurl.v1.StreamInfo", "getVipFree", true , loadPackageParam.classLoader)
-                        hookMethod("com.bapis.bilibili.playershared.StreamInfo", "getVipFree", true , loadPackageParam.classLoader)
+                        hookVipFree("com.bapis.bilibili.app.playurl.v1.StreamInfo", loadPackageParam.classLoader)
+                        hookVipFree("com.bapis.bilibili.playershared.StreamInfo", loadPackageParam.classLoader)
                         hookMethod("com.bapis.bilibili.app.playurl.v1.StreamInfo", "getNeedVip", false , loadPackageParam.classLoader)
                         hookMethod("com.bapis.bilibili.playershared.StreamInfo", "getNeedVip", false , loadPackageParam.classLoader)
                     }
