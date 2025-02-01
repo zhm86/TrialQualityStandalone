@@ -18,7 +18,7 @@ TrialQualityStandalone 是一个依照 BiliRoamingX 无限试用会员画质功�
 本项目会出现:
 - 无脑返回 true / false
 - 推荐作用域应用并不生效
-- 出现非常离谱的 ui bug
+- ~~出现非常离谱的 ui bug~~
 
 ## · 参考部分
 - [TrialQualityPatch.java#L22-L44](https://github.com/BiliRoamingX/BiliRoamingX/blob/main/integrations%2Fapp%2Fsrc%2Fmain%2Fjava%2Fapp%2Frevanced%2Fbilibili%2Fpatches%2FTrialQualityPatch.java#L22-L44)
