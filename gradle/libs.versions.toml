@@ -11,7 +11,7 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 
 [libraries]
-api = { module = "de.robv.android.xposed:api", version.ref = "api" }
+xposed = { module = "de.robv.android.xposed:api", version.ref = "api" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
