@@ -8,7 +8,7 @@ plugins {
 }
 
 val commit: String by rootProject
-val appVerCode = jgit.repo()?.commitCount("refs/remotes/origin/main") ?: commit ?: 1
+val appVerCode: Int = jgit.repo()?.commitCount("refs/remotes/origin/main") ?: commit ?: 1
 val appVerName: String by rootProject
 
 apksign {
