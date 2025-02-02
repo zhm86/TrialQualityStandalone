@@ -43,10 +43,11 @@ jobs:
           version=`awk -F "=" '$1 == "appVerName" {print $2}' gradle.properties`
           echo "VERSION=$version" >> $GITHUB_ENV
           commit_count=$(git rev-list --count HEAD)
-          echo "commit=$commit_count" >> gradle.properties
+          echo "commit_count=$commit_count" >> $GITHUB_ENV
 
       - name: Build with gradle
         run: |
+          echo "commit=${{ env.commit_count }}" >> gradle.properties
           chmod 777 ./gradlew
           ./gradlew --no-daemon build
 
