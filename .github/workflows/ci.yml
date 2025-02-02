@@ -17,7 +17,11 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        run: |
+          cd ../
+          rm -r ./TrialQualityStandalone
+          git clone https://github.com/sti-233/TrialQualityStandalone.git
+          cd TrialQualityStandalone
 
       - name: Set up JDK
         uses: actions/setup-java@v4
@@ -42,12 +46,9 @@ jobs:
         run: |
           version=`awk -F "=" '$1 == "appVerName" {print $2}' gradle.properties`
           echo "VERSION=$version" >> $GITHUB_ENV
-          commit_count=$(git rev-list --count HEAD)
-          echo "commit_count=$commit_count" >> $GITHUB_ENV
 
       - name: Build with gradle
         run: |
-          echo "commit=${{ env.commit_count }}" >> gradle.properties
           chmod 777 ./gradlew
           ./gradlew --no-daemon build
 
