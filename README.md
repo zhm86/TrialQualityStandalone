@@ -15,10 +15,14 @@
 
 TrialQualityStandalone 是一个依照 BiliRoamingX 无限试用会员画质功能的原理，但通过非原始实现制作的 Xposed 模块。<br/>
 
-本项目会出现:
-- 无脑返回 true / false
-- 推荐作用域应用并不生效
-- ~~出现非常离谱的 ui bug~~
+测试的版本:
+- 原版 8.30.0 ✅ 8.32.0 ✅
+- 概念版 8.31.0 ✅
+- Play版 3.20.2 ✅
+- HD版 2.0.2 ❎
+
+>[!Tip]
+> 请注意不要消耗完试用次数再使用此模块<br/>
 
 ## · 参考部分
 - [TrialQualityPatch.java#L22-L44](https://github.com/BiliRoamingX/BiliRoamingX/blob/main/integrations%2Fapp%2Fsrc%2Fmain%2Fjava%2Fapp%2Frevanced%2Fbilibili%2Fpatches%2FTrialQualityPatch.java#L22-L44)
