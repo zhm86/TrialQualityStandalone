@@ -40,10 +40,10 @@ jobs:
 
       - name: Retrieve version
         run: |
-          commit_count=`git rev-list HEAD --count`
-          echo 'commit=$commit_count' >> gradle.properties
           version=`awk -F "=" '$1 == "appVerName" {print $2}' gradle.properties`
           echo "VERSION=$version" >> $GITHUB_ENV
+          commit_count=$(git rev-list --count HEAD)
+          echo "commit=$commit_count" >> gradle.properties
 
       - name: Build with gradle
         run: |
