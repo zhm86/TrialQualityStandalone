@@ -7,8 +7,7 @@ plugins {
     id("org.lsposed.lsplugin.apktransform") version "1.2" 
 }
 
-val commit: Int by rootProject
-val appVerCode = jgit.repo()?.commitCount("refs/remotes/origin/main") ?: commit ?: 1
+val appVerCode = jgit.repo()?.commitCount("refs/remotes/origin/main") ?: 1
 val appVerName: String by rootProject
 
 apksign {
