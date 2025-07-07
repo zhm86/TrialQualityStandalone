@@ -20,7 +20,7 @@ jobs:
         run: |
           cd ../
           rm -r ./TrialQualityStandalone
-          git clone https://github.com/sti-233/TrialQualityStandalone.git
+          git clone https://github.com/zhm86/TrialQualityStandalone.git
           cd TrialQualityStandalone
 
       - name: Set up JDK
